@@ -20,37 +20,28 @@ interface Navigation {
 
 export const navigation: Navigation[] = [
   {
-    link: ROUTES.dashboard,
-    title: t`Dashboard`,
+    link: 'https://ibtc.kiki.finance/ibtc/',
+    title: t`iBTC`,
     dataCy: 'menuDashboard',
   },
   {
-    link: ROUTES.markets,
-    title: t`Markets`,
+    link: 'https://ibtc.kiki.finance/yield/',
+    title: t`Yield Market`,
     dataCy: 'menuMarkets',
   },
   {
-    link: ROUTES.staking,
-    title: t`Stake`,
+    link: 'https://ibtc.kiki.finance/stxsat/',
+    title: t`stXSAT`,
     dataCy: 'menuStake',
-    isVisible: () =>
-      process.env.NEXT_PUBLIC_ENABLE_STAKING === 'true' &&
-      process.env.NEXT_PUBLIC_ENV === 'prod' &&
-      !ENABLE_TESTNET,
   },
   {
-    link: ROUTES.governance,
-    title: t`Governance`,
+    link: ROUTES.dashboard,
+    title: t`Borrow`,
     dataCy: 'menuGovernance',
     // isVisible: () =>
     //   process.env.NEXT_PUBLIC_ENABLE_GOVERNANCE === 'true' &&
     //   process.env.NEXT_PUBLIC_ENV === 'prod' &&
     //   !ENABLE_TESTNET,
-  },
-  {
-    link: ROUTES.faucet,
-    title: t`Faucet`,
-    isVisible: () => process.env.NEXT_PUBLIC_ENV === 'staging' || ENABLE_TESTNET,
   },
 ];
 

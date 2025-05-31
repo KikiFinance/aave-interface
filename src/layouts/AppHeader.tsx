@@ -120,7 +120,7 @@ export function AppHeader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [md]);
 
-  const headerHeight = 48;
+  const headerHeight = 64;
 
   const toggleMobileMenu = (state: boolean) => {
     if (md) setMobileDrawerOpen(state);
@@ -222,105 +222,16 @@ export function AppHeader() {
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <img src={uiConfig.appLogo} alt="AAVE" width={72} height={20} />
+          <img src={uiConfig.appLogo} alt="KiKi" width={97} height={43} />
         </Box>
-        <Box sx={{ mr: sm ? 1 : 3 }}>
-          {ENABLE_TESTNET && (
-            <ContentWithTooltip tooltipContent={testnetTooltip} offset={[0, -4]} withoutHover>
-              <Button
-                variant="surface"
-                size="small"
-                color="primary"
-                sx={{
-                  backgroundColor: '#B6509E',
-                  '&:hover, &.Mui-focusVisible': { backgroundColor: 'rgba(182, 80, 158, 0.7)' },
-                }}
-              >
-                TESTNET
-                <SvgIcon sx={{ marginLeft: '2px', fontSize: '16px' }}>
-                  <InformationCircleIcon />
-                </SvgIcon>
-              </Button>
-            </ContentWithTooltip>
-          )}
-        </Box>
-        <Box sx={{ mr: sm ? 1 : 3 }}>
-          {FORK_ENABLED && currentMarketData?.isFork && (
-            <ContentWithTooltip tooltipContent={forkTooltip} offset={[0, -4]} withoutHover>
-              <Button
-                variant="surface"
-                size="small"
-                color="primary"
-                sx={{
-                  backgroundColor: '#B6509E',
-                  '&:hover, &.Mui-focusVisible': { backgroundColor: 'rgba(182, 80, 158, 0.7)' },
-                }}
-              >
-                FORK
-                <SvgIcon sx={{ marginLeft: '2px', fontSize: '16px' }}>
-                  <InformationCircleIcon />
-                </SvgIcon>
-              </Button>
-            </ContentWithTooltip>
-          )}
-        </Box>
+
+        <Box sx={{ flexGrow: 1 }} />
 
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           <NavItems />
         </Box>
 
         <Box sx={{ flexGrow: 1 }} />
-
-        <NoSsr>
-          <StyledBadge
-            invisible={visitedSwitch}
-            variant="dot"
-            badgeContent=""
-            color="secondary"
-            sx={{ mr: 2 }}
-          >
-            <Button
-              onClick={handleBridgeClick}
-              variant="surface"
-              sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}
-            >
-              {!smd && (
-                <Typography component="span" typography="subheader1">
-                  Bridge GHO
-                </Typography>
-              )}
-              <SvgIcon fontSize="small">
-                <SparklesIcon />
-              </SvgIcon>
-            </Button>
-          </StyledBadge>
-        </NoSsr>
-
-        <NoSsr>
-          <StyledBadge
-            invisible={true}
-            variant="dot"
-            badgeContent=""
-            color="secondary"
-            sx={{ mr: 2 }}
-          >
-            <Button
-              onClick={handleSwitchClick}
-              variant="surface"
-              sx={{ p: '7px 8px', minWidth: 'unset', gap: 2, alignItems: 'center' }}
-              aria-label="Switch tool"
-            >
-              {!smd && (
-                <Typography component="span" typography="subheader1">
-                  Switch tokens
-                </Typography>
-              )}
-              <SvgIcon fontSize="small">
-                <SwitchHorizontalIcon />
-              </SvgIcon>
-            </Button>
-          </StyledBadge>
-        </NoSsr>
 
         {readOnlyMode ? (
           <Button
@@ -339,9 +250,9 @@ export function AppHeader() {
           <ConnectWalletButton />
         )}
 
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        {/* <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           <SettingsMenu />
-        </Box>
+        </Box> */}
 
         {!walletWidgetOpen && (
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

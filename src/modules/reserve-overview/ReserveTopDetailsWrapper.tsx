@@ -28,6 +28,7 @@ import { AddTokenDropdown } from './AddTokenDropdown';
 import { GhoReserveTopDetails } from './Gho/GhoReserveTopDetails';
 import { ReserveTopDetails } from './ReserveTopDetails';
 import { TokenLinkDropdown } from './TokenLinkDropdown';
+import { ROUTES } from 'src/components/primitives/Link';
 
 interface ReserveTopDetailsProps {
   underlyingAsset: string;
@@ -110,9 +111,7 @@ export const ReserveTopDetailsWrapper = ({ underlyingAsset }: ReserveTopDetailsP
                 </SvgIcon>
               }
               onClick={() => {
-                // https://github.com/vercel/next.js/discussions/34980
-                if (!!history.state.idx) router.back();
-                else router.push('/markets');
+                router.push(ROUTES.dashboard);
               }}
               sx={{ mr: 3, mb: downToSM ? '24px' : '0' }}
             >

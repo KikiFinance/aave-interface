@@ -80,14 +80,14 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
             <MenuItemsWrapper title={<Trans>Menu</Trans>}>
               <NavItems setOpen={setOpen} />
             </MenuItemsWrapper>
-            <MenuItemsWrapper title={<Trans>Global settings</Trans>}>
+            {/* <MenuItemsWrapper title={<Trans>Global settings</Trans>}>
               <List>
                 <DarkModeSwitcher />
                 {PROD_ENV && <TestNetModeSwitcher />}
                 <LanguageListItem onClick={() => setIsLanguagesListOpen(true)} />
               </List>
-            </MenuItemsWrapper>
-            <MenuItemsWrapper title={<Trans>Links</Trans>}>
+            </MenuItemsWrapper> */}
+            {/* <MenuItemsWrapper title={<Trans>Links</Trans>}>
               <List>
                 <ListItem sx={{ cursor: 'pointer', color: '#F1F1F3' }} onClick={handleOpenReadMode}>
                   <ListItemText>
@@ -114,7 +114,7 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
                   </ListItem>
                 ))}
               </List>
-            </MenuItemsWrapper>
+            </MenuItemsWrapper> */}
           </>
         ) : (
           <List sx={{ px: 2 }}>

@@ -46,7 +46,7 @@ export const DashboardContentWrapper = ({ isBorrow }: DashboardContentWrapperPro
             width: paperWidth,
           }}
         >
-          {currentAccount && !isBorrow && downToLg && (
+          {currentAccount && !isBorrow && downToLg && false && (
             <Box
               sx={{
                 position: { xs: 'static', md: 'relative' },
@@ -86,7 +86,7 @@ export const DashboardContentWrapper = ({ isBorrow }: DashboardContentWrapperPro
             width: paperWidth,
           }}
         >
-          {currentAccount && (
+          {currentAccount && false && (
             <Box
               sx={{
                 position: { xs: 'static', md: 'absolute' },

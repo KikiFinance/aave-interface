@@ -33,11 +33,11 @@ export const FORK_ENABLED =
 // specifies which network was forked
 export const FORK_BASE_CHAIN_ID =
   Number(process.env.NEXT_PUBLIC_FORK_BASE_CHAIN_ID) ||
-  Number(global?.window?.localStorage.getItem('forkBaseChainId') || 1);
+  Number(global?.window?.localStorage.getItem('forkBaseChainId') || 840000);
 // specifies on which chainId the fork is running
 export const FORK_CHAIN_ID =
   Number(process.env.NEXT_PUBLIC_FORK_CHAIN_ID) ||
-  Number(global?.window?.localStorage.getItem('forkNetworkId') || 3030);
+  Number(global?.window?.localStorage.getItem('forkNetworkId') || 840000);
 export const FORK_RPC_URL =
   process.env.NEXT_PUBLIC_FORK_URL_RPC ||
   global?.window?.localStorage.getItem('forkRPCUrl') ||
@@ -91,7 +91,6 @@ export function getSupportedChainIds(): number[] {
       .filter((value) => {
         const isTestnet =
           networkConfigs[marketsData[value as keyof typeof CustomMarket].chainId].isTestnet;
-
         // If this is a staging environment, or the testnet toggle is on, only show testnets
         if (STAGING_ENV || ENABLE_TESTNET) {
           return isTestnet;
@@ -126,7 +125,7 @@ const linkBuilder =
     return baseUrl;
   };
 
-export function getNetworkConfig(chainId: ChainId): NetworkConfig {
+export function getNetworkConfig(chainId: number): NetworkConfig {
   const config = networkConfigs[chainId];
   if (!config) {
     // this case can only ever occure when a wallet is connected with a unknown chainId which will not allow interaction
@@ -188,7 +187,7 @@ export const getProvider = (chainId: ChainId): ProviderWithSend => {
 };
 
 export const getENSProvider = () => {
-  const chainId = 1;
+  const chainId = 840000;
   const config = getNetworkConfig(chainId);
   return new StaticJsonRpcProvider(config.publicJsonRPCUrl[0], chainId);
 };

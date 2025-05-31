@@ -249,6 +249,13 @@ export const SupplyAssetsListItemDesktop = ({
           <Trans>Supply</Trans>
         </Button>
         <Button
+          variant="contained"
+          component={Link}
+          href={ROUTES.reserveOverview(detailsAddress, currentMarket)}
+        >
+          <Trans>Details</Trans>
+        </Button>
+        {/* <Button
           id="supply-extra-button"
           sx={{
             minWidth: 0,
@@ -261,7 +268,7 @@ export const SupplyAssetsListItemDesktop = ({
           aria-expanded={open ? 'true' : undefined}
         >
           <Trans>...</Trans>
-        </Button>
+        </Button> */}
         <Menu
           id="supply-item-extra-menu"
           anchorEl={anchorEl}

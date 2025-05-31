@@ -149,11 +149,15 @@ export const MarketSwitcher = () => {
       aria-label="select market"
       data-cy="marketSelector"
       value={currentMarket}
+      disabled
       onChange={handleMarketSelect}
       sx={{
         mr: 2,
         '& .MuiOutlinedInput-notchedOutline': {
           border: 'none',
+        },
+        '& .MuiInputBase-input.Mui-disabled': {
+          WebkitTextFillColor: 'inherit', // 或指定具体颜色，比如 '#000'
         },
       }}
       SelectProps={{
@@ -183,7 +187,7 @@ export const MarketSwitcher = () => {
                   >
                     {getMarketHelpData(market.marketTitle).name} {market.isFork ? 'Fork' : ''}
                     {upToLG &&
-                    (currentMarket === 'proto_mainnet_v3' || currentMarket === 'proto_lido_v3')
+                      (currentMarket === 'proto_mainnet_v3' || currentMarket === 'proto_lido_v3')
                       ? 'Instance'
                       : ' Market'}
                   </Typography>
@@ -208,7 +212,7 @@ export const MarketSwitcher = () => {
                           color: '#F1F1F3',
                         }}
                       >
-                        <ChevronDownIcon />
+                        {/* <ChevronDownIcon /> */}
                       </SvgIcon>
                     </Box>
                   ) : (
@@ -232,7 +236,7 @@ export const MarketSwitcher = () => {
                           color: '#F1F1F3',
                         }}
                       >
-                        <ChevronDownIcon />
+                        {/* <ChevronDownIcon /> */}
                       </SvgIcon>
                     </Box>
                   )}
@@ -306,9 +310,8 @@ export const MarketSwitcher = () => {
               width: '100%',
               height: '36px',
               background: theme.palette.primary.main,
-              border: `1px solid ${
-                theme.palette.mode === 'dark' ? 'rgba(235, 235, 237, 0.12)' : '#1B2030'
-              }`,
+              border: `1px solid ${theme.palette.mode === 'dark' ? 'rgba(235, 235, 237, 0.12)' : '#1B2030'
+                }`,
               borderRadius: '6px',
               marginTop: '16px',
               marginBottom: '12px',
@@ -332,13 +335,13 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V3
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
-                        backgroundClip: 'text',
-                        color: 'transparent',
-                      }
+                      backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                      backgroundClip: 'text',
+                      color: 'transparent',
+                    }
                     : {
-                        color: theme.palette.mode === 'dark' ? '#0F121D' : '#FFFFFF',
-                      }
+                      color: theme.palette.mode === 'dark' ? '#0F121D' : '#FFFFFF',
+                    }
                 }
               >
                 <Trans>Version 3</Trans>
@@ -361,13 +364,13 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V2
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
-                        backgroundClip: 'text',
-                        color: 'transparent',
-                      }
+                      backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                      backgroundClip: 'text',
+                      color: 'transparent',
+                    }
                     : {
-                        color: theme.palette.mode === 'dark' ? '#0F121D' : '#FFFFFF',
-                      }
+                      color: theme.palette.mode === 'dark' ? '#0F121D' : '#FFFFFF',
+                    }
                 }
               >
                 <Trans>Version 2</Trans>
@@ -388,7 +391,7 @@ export const MarketSwitcher = () => {
               '.MuiListItemIcon-root': { minWidth: 'unset' },
               display:
                 (market.v3 && selectedMarketVersion === SelectedMarketVersion.V2) ||
-                (!market.v3 && selectedMarketVersion === SelectedMarketVersion.V3)
+                  (!market.v3 && selectedMarketVersion === SelectedMarketVersion.V3)
                   ? 'none'
                   : 'flex',
             }}
