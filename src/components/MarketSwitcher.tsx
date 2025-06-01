@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import {
   Box,

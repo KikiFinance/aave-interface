@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "ibtc-test3",
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "ibtc-test",
+    "prod": "kiki-finance"
+  },
+  "targets": {},
+  "etags": {}
+}
