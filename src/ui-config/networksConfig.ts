@@ -129,7 +129,7 @@ export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
     baseAssetDecimals: 18,
     explorerLink: 'https://scan2.exactsat.io/',
     isTestnet: false,
-    networkLogoPath: '/icons/networks/ethereum.svg',
+    networkLogoPath: '/icons/networks/exsat_icon.png',
     wagmiChain: EXSAT_TEST2,
   },
   // [ChainId.mainnet]: {
