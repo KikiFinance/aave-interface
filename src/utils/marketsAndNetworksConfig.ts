@@ -162,6 +162,10 @@ const providers: { [network: string]: ProviderWithSend } = {};
 export const getProvider = (chainId: ChainId): ProviderWithSend => {
   if (!providers[chainId]) {
     const config = getNetworkConfig(chainId);
+    if (!config.publicJsonRPCUrl) {
+      return new StaticJsonRpcProvider('', chainId);
+    }
+
     if (
       (FORK_ENABLED && FORK_BASE_CHAIN_ID === chainId) ||
       process.env.NEXT_PUBLIC_PRIVATE_RPC_ENABLED !== 'true'
