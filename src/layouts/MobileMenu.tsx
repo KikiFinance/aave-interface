@@ -1,29 +1,12 @@
 import { MenuIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
-import {
-  Box,
-  Button,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  SvgIcon,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Divider, List, SvgIcon, Typography } from '@mui/material';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { useModalContext } from 'src/hooks/useModal';
-import { PROD_ENV } from 'src/utils/marketsAndNetworksConfig';
 
-import { Link } from '../components/primitives/Link';
-import { moreNavigation } from '../ui-config/menu-items';
-import { DarkModeSwitcher } from './components/DarkModeSwitcher';
 import { DrawerWrapper } from './components/DrawerWrapper';
-import { LanguageListItem, LanguagesList } from './components/LanguageSwitcher';
+import { LanguagesList } from './components/LanguageSwitcher';
 import { MobileCloseButton } from './components/MobileCloseButton';
 import { NavItems } from './components/NavItems';
-import { TestNetModeSwitcher } from './components/TestNetModeSwitcher';
 
 interface MobileMenuProps {
   open: boolean;
@@ -46,16 +29,9 @@ const MenuItemsWrapper = ({ children, title }: { children: ReactNode; title: Rea
 );
 
 export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => {
-  const { i18n } = useLingui();
   const [isLanguagesListOpen, setIsLanguagesListOpen] = useState(false);
-  const { openReadMode } = useModalContext();
 
   useEffect(() => setIsLanguagesListOpen(false), [open]);
-
-  const handleOpenReadMode = () => {
-    setOpen(false);
-    openReadMode();
-  };
 
   return (
     <>

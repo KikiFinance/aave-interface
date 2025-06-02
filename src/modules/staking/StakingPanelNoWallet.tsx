@@ -8,7 +8,6 @@ import { TokenIcon } from 'src/components/primitives/TokenIcon';
 import { TextWithTooltip } from 'src/components/TextWithTooltip';
 import { StakeTokenFormatted, useGeneralStakeUiData } from 'src/hooks/stake/useGeneralStakeUiData';
 import { useRootStore } from 'src/store/root';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
 
 export interface StakingPanelNoWalletProps {
   description?: React.ReactNode;
@@ -81,7 +80,7 @@ export const StakingPanelNoWallet: React.FC<StakingPanelNoWalletProps> = ({
           </Typography>
           {stakedToken === 'GHO' && (
             <Box sx={{ mx: 2 }}>
-              <MeritIncentivesButton symbol={stakedToken} market={CustomMarket.proto_mainnet_v3} />
+              <MeritIncentivesButton symbol={stakedToken} market='CustomMarket.proto_mainnet_v3' />
             </Box>
           )}
         </Stack>

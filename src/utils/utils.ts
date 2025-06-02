@@ -1,8 +1,6 @@
 import { ChainId, ProtocolAction } from '@aave/contract-helpers';
 import { BigNumberValue, USD_DECIMALS, valueToBigNumber } from '@aave/math-utils';
 
-import { CustomMarket } from './marketsAndNetworksConfig';
-
 export function hexToAscii(_hex: string): string {
   const hex = _hex.toString();
   let str = '';
@@ -96,34 +94,36 @@ export const showExternalIncentivesTooltip = (
     kernelPoints: false,
   };
 
+  if(currentMarket=='') return tooltipsConfig
+
   if (
     superFestRewardsEnabled &&
-    currentMarket === CustomMarket.proto_base_v3 &&
+    // currentMarket === CustomMarket.proto_base_v3 &&
     protocolAction === ProtocolAction.supply &&
     (symbol == 'ETH' || symbol == 'WETH' || symbol == 'wstETH')
   ) {
-    tooltipsConfig.superFestRewards = true;
+    // tooltipsConfig.superFestRewards = true;
   }
 
   if (
     spkRewardsEnabled &&
-    currentMarket === CustomMarket.proto_mainnet_v3 &&
+    // currentMarket === CustomMarket.proto_mainnet_v3 &&
     protocolAction === ProtocolAction.supply &&
     symbol == 'USDS'
   ) {
-    tooltipsConfig.spkAirdrop = true;
+    // tooltipsConfig.spkAirdrop = true;
   }
 
   if (
     kernelPointsEnabled &&
-    (currentMarket === CustomMarket.proto_mainnet_v3 ||
-      currentMarket === CustomMarket.proto_lido_v3 ||
-      currentMarket === CustomMarket.proto_base_v3 ||
-      currentMarket === CustomMarket.proto_arbitrum_v3) &&
+    // (currentMarket === CustomMarket.proto_mainnet_v3 ||
+    //   currentMarket === CustomMarket.proto_lido_v3 ||
+    //   currentMarket === CustomMarket.proto_base_v3 ||
+    //   currentMarket === CustomMarket.proto_arbitrum_v3) &&
     protocolAction === ProtocolAction.supply &&
     (symbol == 'rsETH' || symbol == 'wrsETH')
   ) {
-    tooltipsConfig.kernelPoints = true;
+    // tooltipsConfig.kernelPoints = true;
   }
 
   return tooltipsConfig;

@@ -1,6 +1,5 @@
 import { ChainId } from '@aave/contract-helpers';
 import {
-  AaveV3Ethereum,
   AaveV3Sepolia,
 } from '@bgd-labs/aave-address-book';
 import { ReactNode } from 'react';
@@ -57,7 +56,7 @@ export enum CustomMarket {
   proto_exsat_test2_v3 = 'proto_exsat_test2_v3',
 }
 
-const apiKey = process.env.NEXT_PUBLIC_SUBGRAPH_API_KEY;
+// const apiKey = process.env.NEXT_PUBLIC_SUBGRAPH_API_KEY;
 
 export const marketsData: {
   [key in keyof typeof CustomMarket]: MarketDataType;
@@ -78,12 +77,12 @@ export const marketsData: {
       switch: true,
     },
     addresses: {
-      LENDING_POOL_ADDRESS_PROVIDER: '0x1789D04B3e2937E604Ef246b3E0Ca5920624f6bB',
-      LENDING_POOL: '0x40b42A5E7d2f7D7BdF18d7314eBEe923cdd7b0Ce',
-      WETH_GATEWAY: '0x16ACd0227f68030385379Ee173bd2287412A7e04',
-      WALLET_BALANCE_PROVIDER: '0x3B3f043DF883a95f6EF1a3BC5462ff43331a10fC',
-      UI_POOL_DATA_PROVIDER: '0x389e63C6863085C4c21F804648D82C189595C423',
-      UI_INCENTIVE_DATA_PROVIDER: '0x75e0c9b831151AeF78fbf5C044127f38E5F49D32',
+      LENDING_POOL_ADDRESS_PROVIDER: '0xA068f66d072286f1287DbF6cec92995eb77A30DD',
+      LENDING_POOL: '0xD6DFAF9C46e2aBaD132F6AcfA577B3E9D372cf78',
+      WETH_GATEWAY: '0x1659c7adAd856CD119c5f454cDD368652Bb8709d',
+      WALLET_BALANCE_PROVIDER: '0xF4479c40B66e8A200A0d66f715935A3a97d18A06',
+      UI_POOL_DATA_PROVIDER: '0x3C0E3f80088f54FAdD4dCDEE7Bb58dc71579789F',
+      UI_INCENTIVE_DATA_PROVIDER: '0xA75017dD4a698D09f49c6596a61bE1C504dF254B',
       COLLECTOR: '0x5b08DC1562f7eF7495A010b13eF249022f16BD7e',
     },
   },

@@ -46,8 +46,8 @@ export const BorrowedPositionsListItem = ({
   const showSwitchButton = !!isFeatureEnabled.debtSwitch(currentMarketData);
   const disableSwitch =
     // NOTE: Disabled on v2 because borrowing is not possible
-    currentMarket === 'proto_mainnet' ||
-    currentMarket === 'proto_polygon' ||
+    // currentMarket === 'proto_mainnet' ||
+    // currentMarket === 'proto_polygon' ||
     reserve.isPaused ||
     !reserve.isActive ||
     reserve.symbol == 'stETH' ||

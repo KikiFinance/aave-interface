@@ -26,7 +26,6 @@ import { TextWithTooltip } from 'src/components/TextWithTooltip';
 import { StakeTokenFormatted } from 'src/hooks/stake/useGeneralStakeUiData';
 import { useCurrentTimestamp } from 'src/hooks/useCurrentTimestamp';
 import { useModalContext } from 'src/hooks/useModal';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
 import { GENERAL } from 'src/utils/events';
 
 import { StakeActionBox } from './StakeActionBox';
@@ -330,7 +329,7 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
               variant="secondary14"
             />
             {stakedToken === 'GHO' ? (
-              <MeritIncentivesButton symbol={stakedToken} market={CustomMarket.proto_mainnet_v3} />
+              <MeritIncentivesButton symbol={stakedToken} market='CustomMarket.proto_mainnet_v3' />
             ) : null}
           </Stack>
         </Box>

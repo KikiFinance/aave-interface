@@ -1,28 +1,8 @@
 import { ChainId } from '@aave/contract-helpers';
 import { defineChain } from 'viem';
 import {
-  arbitrum,
-  arbitrumSepolia,
-  avalanche,
-  avalancheFuji,
-  base,
-  baseSepolia,
-  bsc,
-  celo,
   Chain,
-  gnosis,
-  linea,
-  mainnet,
-  metis,
-  optimism,
-  optimismSepolia,
-  polygon,
-  scroll,
-  scrollSepolia,
   sepolia,
-  soneium,
-  sonic,
-  zksync,
 } from 'wagmi/chains';
 
 export type ExplorerLinkBuilderProps = {
@@ -94,7 +74,7 @@ export type NetworkConfig = {
 
 export type BaseNetworkConfig = Omit<NetworkConfig, 'explorerLinkBuilder'>;
 
-const ratesHistoryApiUrl = `${process.env.NEXT_PUBLIC_API_BASEURL}/data/rates-history`;
+// const ratesHistoryApiUrl = `${process.env.NEXT_PUBLIC_API_BASEURL}/data/rates-history`;
 
 export const testnetConfig: Record<string, BaseNetworkConfig> = {
   [ChainId.sepolia]: {

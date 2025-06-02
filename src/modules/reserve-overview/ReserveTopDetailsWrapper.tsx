@@ -13,6 +13,7 @@ import {
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { getMarketInfoById, MarketLogo } from 'src/components/MarketSwitcher';
+import { ROUTES } from 'src/components/primitives/Link';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
 import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
@@ -28,7 +29,6 @@ import { AddTokenDropdown } from './AddTokenDropdown';
 import { GhoReserveTopDetails } from './Gho/GhoReserveTopDetails';
 import { ReserveTopDetails } from './ReserveTopDetails';
 import { TokenLinkDropdown } from './TokenLinkDropdown';
-import { ROUTES } from 'src/components/primitives/Link';
 
 interface ReserveTopDetailsProps {
   underlyingAsset: string;

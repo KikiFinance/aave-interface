@@ -66,7 +66,7 @@ export const RepayModalContent = ({
   const [assets, setAssets] = useState<RepayAsset[]>([tokenToRepayWith]);
   const [repayMax, setRepayMax] = useState('');
   const [_amount, setAmount] = useState('');
-  const amountRef = useRef<string>();
+  const amountRef = useRef<string>('');
 
   const networkConfig = getNetworkConfig(currentChainId);
 

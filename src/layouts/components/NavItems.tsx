@@ -7,7 +7,6 @@ import { useShallow } from 'zustand/shallow';
 
 import { Link } from '../../components/primitives/Link';
 import { navigation } from '../../ui-config/menu-items';
-import { MoreMenu } from '../MoreMenu';
 
 interface NavItemsProps {
   setOpen?: (value: boolean) => void;
