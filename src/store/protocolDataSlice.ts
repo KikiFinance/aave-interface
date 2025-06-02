@@ -34,7 +34,7 @@ export const createProtocolDataSlice: StateCreator<
   [],
   ProtocolDataSlice
 > = (set, get) => {
-  const initialMarket = availableMarkets[0];
+  const initialMarket = process.env.NEXT_PUBLIC_MARKET as CustomMarket;
   const initialMarketData = marketsData[initialMarket];
   return {
     currentMarket: initialMarket,

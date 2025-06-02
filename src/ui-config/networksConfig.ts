@@ -112,6 +112,20 @@ export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
     networkLogoPath: '/icons/networks/exsat_icon.png',
     wagmiChain: EXSAT_TEST2,
   },
+  [7200]: {
+    name: 'EXSAT',
+    publicJsonRPCUrl: [
+      'https://evm2.exactsat.io',
+    ],
+    baseUniswapAdapter: '0x0',
+    baseAssetSymbol: 'BTC',
+    wrappedBaseAssetSymbol: 'XBTC',
+    baseAssetDecimals: 18,
+    explorerLink: 'https://scan2.exactsat.io/',
+    isTestnet: false,
+    networkLogoPath: '/icons/networks/exsat_icon.png',
+    wagmiChain: EXSAT_TEST2,
+  },
   // [ChainId.mainnet]: {
   //   name: 'Ethereum',
   //   publicJsonRPCUrl: [

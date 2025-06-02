@@ -54,6 +54,7 @@ export enum CustomMarket {
   proto_sepolia_v3 = 'proto_sepolia_v3',
   // proto_mainnet_v3 = 'proto_mainnet_v3',
   proto_exsat_test2_v3 = 'proto_exsat_test2_v3',
+  proto_exsat_v3 = 'proto_exsat_v3',
 }
 
 // const apiKey = process.env.NEXT_PUBLIC_SUBGRAPH_API_KEY;
@@ -66,6 +67,31 @@ export const marketsData: {
     market: CustomMarket.proto_exsat_test2_v3,
     v3: true,
     chainId: 840000,
+    enabledFeatures: {
+      governance: true,
+      staking: true,
+      liquiditySwap: true,
+      collateralRepay: true,
+      incentives: true,
+      withdrawAndSwitch: true,
+      debtSwitch: true,
+      switch: true,
+    },
+    addresses: {
+      LENDING_POOL_ADDRESS_PROVIDER: '0xA068f66d072286f1287DbF6cec92995eb77A30DD',
+      LENDING_POOL: '0xD6DFAF9C46e2aBaD132F6AcfA577B3E9D372cf78',
+      WETH_GATEWAY: '0x1659c7adAd856CD119c5f454cDD368652Bb8709d',
+      WALLET_BALANCE_PROVIDER: '0xF4479c40B66e8A200A0d66f715935A3a97d18A06',
+      UI_POOL_DATA_PROVIDER: '0x3C0E3f80088f54FAdD4dCDEE7Bb58dc71579789F',
+      UI_INCENTIVE_DATA_PROVIDER: '0xA75017dD4a698D09f49c6596a61bE1C504dF254B',
+      COLLECTOR: '0x5b08DC1562f7eF7495A010b13eF249022f16BD7e',
+    },
+  },
+  [CustomMarket.proto_exsat_v3]: {
+    marketTitle: 'EXSAT',
+    market: CustomMarket.proto_exsat_v3,
+    v3: true,
+    chainId: 7200,
     enabledFeatures: {
       governance: true,
       staking: true,
