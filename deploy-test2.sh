@@ -1,6 +1,6 @@
 rm .env
 ln -s .env.test2 .env
-yarn build
+yarn build:static 
 rm firebase.json
 ln -s firebase-test2.json firebase.json
 firebase use default

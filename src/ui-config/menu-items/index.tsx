@@ -36,7 +36,7 @@ export const navigation: Navigation[] = [
   {
     link: ROUTES.dashboard,
     title: t`Lend`,
-    dataCy: 'menuDashboard',
+    dataCy: 'menuLend',
     // isVisible: () =>
     //   process.env.NEXT_PUBLIC_ENABLE_GOVERNANCE === 'true' &&
     //   process.env.NEXT_PUBLIC_ENV === 'prod' &&

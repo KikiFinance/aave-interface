@@ -1,6 +1,6 @@
 rm .env
 ln -s .env.prd .env
-npm run build
+yarn build:static 
 rm firebase.json
 ln -s firebase-prd.json firebase.json
 firebase use prod

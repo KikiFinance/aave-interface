@@ -3471,3 +3471,11 @@ msgstr "Помните о перегруженности сети и ценах 
 msgid "Merit Program rewards are claimed through the"
 msgstr ""
 
+msgid "iBTC"
+msgstr "iBTC"
+msgid "Yield Market"
+msgstr "Yield Market"
+msgid "stXSAT"
+msgstr "stXSAT"
+msgid "Lend"
+msgstr "Lend"

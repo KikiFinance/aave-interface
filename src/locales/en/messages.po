@@ -3465,3 +3465,12 @@ msgstr "Be mindful of the network congestion and gas prices."
 #: src/components/incentives/MeritIncentivesTooltipContent.tsx
 msgid "Merit Program rewards are claimed through the"
 msgstr "Merit Program rewards are claimed through the"
+
+msgid "iBTC"
+msgstr "iBTC"
+msgid "Yield Market"
+msgstr "Yield Market"
+msgid "stXSAT"
+msgstr "stXSAT"
+msgid "Lend"
+msgstr "Lend"
