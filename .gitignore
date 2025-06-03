@@ -48,4 +48,5 @@ package-lock.json
 .idea
 .vscode
 .env.development
- .yarn/install-state.gz
+.yarn/install-state.gz
+.firebase

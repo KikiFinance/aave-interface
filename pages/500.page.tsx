@@ -70,8 +70,8 @@ export default function Aave500Page() {
                 If the error continues to happen,
                 <br /> you may report it to this
               </Trans>{' '}
-              <Link href="https://discord.com/invite/aave" color="inherit" target="_blank">
-                <Trans>Discord channel</Trans>
+              <Link href="https://t.me/exsat_cn" color="inherit" target="_blank">
+                <Trans>Telegram channel</Trans>
               </Link>
               .
             </Typography>

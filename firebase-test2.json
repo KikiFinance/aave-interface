@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "ibtc-test3",
+    "site": "lend-test2",
     "public": "out",
     "ignore": [
       "firebase.json",

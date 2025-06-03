@@ -1,9 +1,6 @@
 import { ChainId } from '@aave/contract-helpers';
 import { defineChain } from 'viem';
-import {
-  Chain,
-  sepolia,
-} from 'wagmi/chains';
+import { Chain, exsat, sepolia } from 'wagmi/chains';
 
 export type ExplorerLinkBuilderProps = {
   tx?: string;
@@ -100,9 +97,7 @@ export const testnetConfig: Record<string, BaseNetworkConfig> = {
 export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
   [840000]: {
     name: 'EXSAT TEST2',
-    publicJsonRPCUrl: [
-      'https://evm2.exactsat.io',
-    ],
+    publicJsonRPCUrl: ['https://evm2.exactsat.io'],
     baseUniswapAdapter: '0x0',
     baseAssetSymbol: 'BTC',
     wrappedBaseAssetSymbol: 'XBTC',
@@ -114,17 +109,15 @@ export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
   },
   [7200]: {
     name: 'EXSAT',
-    publicJsonRPCUrl: [
-      'https://evm2.exactsat.io',
-    ],
+    publicJsonRPCUrl: ['https://evm.exsat.network'],
     baseUniswapAdapter: '0x0',
     baseAssetSymbol: 'BTC',
     wrappedBaseAssetSymbol: 'XBTC',
     baseAssetDecimals: 18,
-    explorerLink: 'https://scan2.exactsat.io/',
+    explorerLink: 'https://scan.exsat.network',
     isTestnet: false,
     networkLogoPath: '/icons/networks/exsat_icon.png',
-    wagmiChain: EXSAT_TEST2,
+    wagmiChain: exsat,
   },
   // [ChainId.mainnet]: {
   //   name: 'Ethereum',
