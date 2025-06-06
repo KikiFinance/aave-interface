@@ -94,19 +94,7 @@ export const testnetConfig: Record<string, BaseNetworkConfig> = {
   },
 };
 
-export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
-  [840000]: {
-    name: 'EXSAT TEST2',
-    publicJsonRPCUrl: ['https://evm2.exactsat.io'],
-    baseUniswapAdapter: '0x0',
-    baseAssetSymbol: 'BTC',
-    wrappedBaseAssetSymbol: 'XBTC',
-    baseAssetDecimals: 18,
-    explorerLink: 'https://scan2.exactsat.io/',
-    isTestnet: false,
-    networkLogoPath: '/icons/networks/exsat_icon.png',
-    wagmiChain: EXSAT_TEST2,
-  },
+const exsatConfig: Record<string, BaseNetworkConfig> = {
   [7200]: {
     name: 'EXSAT',
     publicJsonRPCUrl: ['https://evm.exsat.network'],
@@ -119,27 +107,31 @@ export const prodNetworkConfig: Record<string, BaseNetworkConfig> = {
     networkLogoPath: '/icons/networks/exsat_icon.png',
     wagmiChain: exsat,
   },
-  // [ChainId.mainnet]: {
-  //   name: 'Ethereum',
-  //   publicJsonRPCUrl: [
-  //     'https://mainnet.gateway.tenderly.co',
-  //     'https://rpc.flashbots.net',
-  //     'https://eth.llamarpc.com',
-  //     'https://eth-mainnet.public.blastapi.io',
-  //     'https://ethereum-rpc.publicnode.com',
-  //   ],
-  //   baseUniswapAdapter: '0xc3efa200a60883a96ffe3d5b492b121d6e9a1f3f',
-  //   baseAssetSymbol: 'ETH',
-  //   wrappedBaseAssetSymbol: 'WETH',
-  //   baseAssetDecimals: 18,
-  //   explorerLink: 'https://etherscan.io',
-  //   ratesHistoryApiUrl,
-  //   networkLogoPath: '/icons/networks/ethereum.svg',
-  //   wagmiChain: mainnet,
-  // },
 };
+
+const exsatTest2Config: Record<string, BaseNetworkConfig> = {
+  [840000]: {
+    name: 'EXSAT TEST2',
+    publicJsonRPCUrl: ['https://evm2.exactsat.io'],
+    baseUniswapAdapter: '0x0',
+    baseAssetSymbol: 'BTC',
+    wrappedBaseAssetSymbol: 'XBTC',
+    baseAssetDecimals: 18,
+    explorerLink: 'https://scan2.exactsat.io/',
+    isTestnet: true,
+    networkLogoPath: '/icons/networks/exsat_icon.png',
+    wagmiChain: EXSAT_TEST2,
+  },
+};
+
+export const prodNetworkConfig =
+  process.env.NEXT_PUBLIC_MARKET === 'proto_exsat_v3' ? exsatConfig : exsatTest2Config;
+
+export const networkConfig =
+  process.env.NEXT_PUBLIC_MARKET === 'proto_exsat_v3' ? exsatTest2Config : exsatConfig;
 
 export const networkConfigs = {
   ...testnetConfig,
   ...prodNetworkConfig,
+  ...networkConfig,
 };
