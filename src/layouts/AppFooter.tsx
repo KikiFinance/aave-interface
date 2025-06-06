@@ -2,11 +2,6 @@ import { Trans } from '@lingui/macro';
 import { GitHub, Telegram, Twitter } from '@mui/icons-material';
 import { Box, styled, SvgIcon, Typography } from '@mui/material';
 import { Link } from 'src/components/primitives/Link';
-import { useRootStore } from 'src/store/root';
-import { useShallow } from 'zustand/shallow';
-
-import DiscordIcon from '/public/icons/discord.svg';
-import LensLogoIcon from '/public/icons/lens-logo.svg';
 
 interface StyledLinkProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
@@ -50,9 +45,9 @@ const FOOTER_ICONS = [
 ];
 
 export function AppFooter() {
-  const [setAnalyticsConfigOpen, setFeedbackOpen] = useRootStore(
-    useShallow((store) => [store.setAnalyticsConfigOpen, store.setFeedbackOpen])
-  );
+  // const [setAnalyticsConfigOpen, setFeedbackOpen] = useRootStore(
+  //   useShallow((store) => [store.setAnalyticsConfigOpen, store.setFeedbackOpen])
+  // );
 
   const FOOTER_LINKS = [
     // {
@@ -113,7 +108,7 @@ export function AppFooter() {
     >
       <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
         {FOOTER_LINKS.map((link) => (
-          <StyledLink onClick={link.onClick} key={link.key} href={link.href}>
+          <StyledLink key={link.key} href={link.href}>
             <Typography variant="caption">{link.label}</Typography>
           </StyledLink>
         ))}
