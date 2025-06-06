@@ -70,6 +70,9 @@ const buildTransports = (chains: CreateConfigParameters['chains']) =>
 const prodCkConfig = getDefaultConfig({
   chains: ENABLE_TESTNET ? testnetChains : prodChains,
   transports: ENABLE_TESTNET ? undefined : buildTransports(prodChains),
+  enableFamily: false,
+  ssr: false,
+  multiInjectedProviderDiscovery: true,
   ...defaultConfig,
 });
 
@@ -84,9 +87,9 @@ const connectors = prodCkConfig.connectors
   ?.map((connector) => {
     // initialize the connector with the emitter so we can access the id
     const c = connector(connectorConfig);
-    if (c.id === familyConnectorId || c.id === 'coinbaseWalletSDK') {
-      return injected();
-    }
+    // if (c.id === 'coinbaseWalletSDK' || c.id === 'safe') {
+    //   return injected();
+    // }
     if (c.id === 'safe') {
       return safe({
         allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/, /dhedge.org$/],
