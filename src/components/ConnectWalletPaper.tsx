@@ -28,9 +28,9 @@ export const ConnectWalletPaper = ({ description, sx, ...rest }: ConnectWalletPa
         ...sx,
       }}
     >
-      <Box>
+      {/* <Box>
         <LandingGhost />
-      </Box>
+      </Box> */}
       <>
         {open ? (
           <CircularProgress />
