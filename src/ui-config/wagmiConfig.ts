@@ -84,6 +84,9 @@ const connectors = prodCkConfig.connectors
   ?.map((connector) => {
     // initialize the connector with the emitter so we can access the id
     const c = connector(connectorConfig);
+    if (c.id === familyConnectorId || c.id === 'coinbaseWalletSDK') {
+      return injected();
+    }
     if (c.id === 'safe') {
       return safe({
         allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/, /dhedge.org$/],
