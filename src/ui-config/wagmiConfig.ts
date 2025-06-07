@@ -46,7 +46,7 @@ if (FORK_ENABLED) {
 
 const defaultConfig = {
   walletConnectProjectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string,
-  appName: 'lend',
+  appName: 'Lend',
   appDescription: 'Non-custodial liquidity protocol',
   appUrl: 'https://lend.kiki.finance/',
   appIcon: 'https://lend.kiki.finance/kiki_text_logo.png',
@@ -92,7 +92,7 @@ const connectors = prodCkConfig.connectors
     // }
     if (c.id === 'safe') {
       return safe({
-        allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/, /dhedge.org$/],
+        allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/, /dhedge.org$/, /safe.exsat.network/],
       });
     } else {
       return connector;

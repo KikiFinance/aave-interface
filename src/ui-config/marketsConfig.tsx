@@ -88,7 +88,7 @@ export const marketsData: {
     },
   },
   [CustomMarket.proto_exsat_v3]: {
-    marketTitle: 'Aave V3 stXSAT Market',
+    marketTitle: 'stXSAT Market',
     market: CustomMarket.proto_exsat_v3,
     v3: true,
     chainId: 7200,
