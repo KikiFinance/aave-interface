@@ -64,9 +64,10 @@ export const SupplyAssetsList = () => {
   const { bridge, isTestnet, baseAssetSymbol, name: networkName } = currentNetworkConfig;
 
   const localStorageName = 'showSupplyZeroAssets';
-  const [isShowZeroAssets, setIsShowZeroAssets] = useState(
-    localStorage.getItem(localStorageName) === 'true'
-  );
+  const [isShowZeroAssets, setIsShowZeroAssets] = useState(() => {
+    const stored = localStorage.getItem(localStorageName);
+    return stored === null ? true : stored === 'true';
+});
 
   const tokensToSupply = reserves
     .filter(

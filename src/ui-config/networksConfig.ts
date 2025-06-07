@@ -118,7 +118,7 @@ const exsatTest2Config: Record<string, BaseNetworkConfig> = {
     wrappedBaseAssetSymbol: 'XBTC',
     baseAssetDecimals: 18,
     explorerLink: 'https://scan2.exactsat.io/',
-    isTestnet: true,
+    isTestnet: false,
     networkLogoPath: '/icons/networks/exsat_icon.png',
     wagmiChain: EXSAT_TEST2,
   },
