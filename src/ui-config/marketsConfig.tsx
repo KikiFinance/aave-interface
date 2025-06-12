@@ -77,6 +77,7 @@ export const marketsData: {
       debtSwitch: false,
       switch: false,
     },
+    subgraphUrl: 'http://199.245.100.216:8000/subgraphs/name/exsat-test2',
     addresses: {
       LENDING_POOL_ADDRESS_PROVIDER: '0xA068f66d072286f1287DbF6cec92995eb77A30DD',
       LENDING_POOL: '0xD6DFAF9C46e2aBaD132F6AcfA577B3E9D372cf78',
@@ -102,6 +103,7 @@ export const marketsData: {
       debtSwitch: false,
       switch: false,
     },
+    subgraphUrl: 'https://api.kiki.finance/subgraph/subgraphs/name/exsat',
     addresses: {
       LENDING_POOL_ADDRESS_PROVIDER: '0x55796a5057D045725D2F8386b141726aFCD60bCA',
       LENDING_POOL: '0x2695dDfB9c4c91d12b0DE46BBD85A1C2190eEd08',
